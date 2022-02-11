@@ -45,7 +45,7 @@ class PayementController extends Controller
 
         if ($payementCheck['code'] == '00') {
             # code...
-            if ($transaction->plateforme == "tonsite") {
+            if ($transaction->plateforme == "rafset-funding.org") {
                 # code...
                 $url = 'https://rafset-funding.org/wp-json/wc/v3/orders/' . $transaction->transaction_id . '?consumer_key=ck_eb811745ac3eb1deb54e2bddc05041f2278b5f63&consumer_secret=cs_5964b9e02746d5f0ed5a975f0fab516718dc1f92';
                 $data = [
@@ -106,7 +106,7 @@ class PayementController extends Controller
         $cinetPayData['site_id'] = $siteId;
         $cinetPayData['currency'] = "XOF";
         $cinetPayData['transaction_id'] = $payementId;
-        $cinetPayData['description'] = "ACHATS SUR tonsite.COM";
+        $cinetPayData['description'] = "ACHATS SUR rafset-funding.org";
         $cinetPayData['return_url'] = $cinetPayReturnUrl;
         $cinetPayData['notify_url'] = $cinetPayNotifyUrl;
         $cinetPayData['customer_name'] = $request->customer_name;
@@ -127,11 +127,11 @@ class PayementController extends Controller
             $transaction = new Transaction();
             $transaction->amount = $request->amount;
             $transaction->currency = "USD";
-            $transaction->type = "tonsite";
-            $transaction->description = "ACHAT SUR tonsite";
+            $transaction->type = "RAFSET FUNDING";
+            $transaction->description = "ACHAT SUR rafset-funding.org";
             $transaction->user_id = $request->userId;
             $transaction->transaction_id = $payementId;
-            $transaction->plateforme = "tonsite";
+            $transaction->plateforme = "rafset-funding.org";
             $transaction->payement_token = $cinetPayResponse['data']['payment_token'];
             $transaction->save();
 
