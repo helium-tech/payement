@@ -49,7 +49,7 @@ class PayementController extends Controller
                 # code...
                 $url = 'https://rafset-funding.org/wp-json/wc/v3/orders/' . $transaction->transaction_id . '?consumer_key=ck_0cdab24396785897e98d310f6eed26f22e3016ba&consumer_secret=cs_af3258df4f29c015e9306b7a958e2b03273caea5';
                 $data = [
-                    'status' => 'processing'
+                    'status' => 'completed'
                 ];
                 $response = Http::put($url, $data);
                 if ($response->successful()) {
