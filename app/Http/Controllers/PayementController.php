@@ -47,7 +47,7 @@ class PayementController extends Controller
             # code...
             if ($transaction->plateforme == "rafset-funding.org") {
                 # code...
-                $url = 'https://rafset-funding.org/wp-json/wc/v3/orders/' . $transaction->transaction_id . '?consumer_key=ck_eb811745ac3eb1deb54e2bddc05041f2278b5f63&consumer_secret=cs_5964b9e02746d5f0ed5a975f0fab516718dc1f92';
+                $url = 'https://rafset-funding.org/wp-json/wc/v3/orders/' . $transaction->transaction_id . '?consumer_key=ck_0cdab24396785897e98d310f6eed26f22e3016ba&consumer_secret=cs_af3258df4f29c015e9306b7a958e2b03273caea5';
                 $data = [
                     'status' => 'processing'
                 ];
