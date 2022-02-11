@@ -112,11 +112,11 @@ class PayementController extends Controller
         $cinetPayData['customer_name'] = $request->customer_name;
         $cinetPayData['alternative_currency'] = "USD";
         $cinetPayData['customer_email'] = $request->customer_email;
-        $cinetPayData['customer_address'] = $request->customer_address;
-        $cinetPayData['customer_city'] = $request->customer_city;
-        $cinetPayData['customer_country'] = $request->customer_country;
-        $cinetPayData['customer_state'] = $request->customer_state;
-        $cinetPayData['customer_zip_code'] = $request->customer_zip_code;
+        $cinetPayData['customer_address'] = "lomé";
+        $cinetPayData['customer_city'] = "lomé";
+        $cinetPayData['customer_country'] = "TG";
+        $cinetPayData['customer_state'] = "TG";
+        $cinetPayData['customer_zip_code'] = "00228";
         $cinetPayData['customer_phone_number'] = $request->customer_phone_number;
         $cinetPayData['customer_surname'] = $request->customer_surname;
 
