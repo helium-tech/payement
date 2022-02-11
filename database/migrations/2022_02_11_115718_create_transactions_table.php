@@ -15,14 +15,16 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('amount');
-            $table->string('usd');
-            $table->string('type');
-            $table->string('description');
             $table->string('user_id');
-            $table->string('transaction_id');
+            $table->string('transaction_id')->unique();
+            $table->integer('amount');
+            $table->string('currency');
+            $table->string('type');
+            $table->json('data')->nullable();
+            $table->string('payement_token')->nullable();
+            $table->string('status')->default("PROGRESS");
+            $table->string('description');
             $table->string('plateforme');
-            $table->string('payement_token');
             $table->timestamps();
         });
     }
