@@ -97,7 +97,7 @@ class PayementController extends Controller
         $siteId = "273954";
         $cinetPayUrl = 'https://api-checkout.cinetpay.com/v2/payment';
         $cinetPayReturnUrl = $request->returnUrl;
-        $cinetPayNotifyUrl = 'https://TONAPI.com/api/notify';
+        $cinetPayNotifyUrl = 'https://payement.helium-t.com/api/notify';
         $now = new DateTime();
         $payementId = $request->orderId;
         $cinetPayData = array();
